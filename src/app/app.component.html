@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title></title>
+</head>
+<body>
+  <div>
+    <input type="text" placeholder="Enter text" [(ngModel)]="inputValue"/>
+    <select [(ngModel)]="selectedValue">
+      <option>None</option>
+      <option *ngFor="let option of options" [ngValue]="option.key">
+        {{option.value}}
+      </option>
+     </select>
+    <button [disabled]="!inputValue" (click)="submitValue()">Submit</button>
+  </div>
+</body>
+</html>
